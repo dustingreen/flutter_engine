@@ -44,7 +44,7 @@ struct VulkanImage {
 class VulkanSurface final : public SurfaceProducerSurface {
  public:
   VulkanSurface(vulkan::VulkanProvider& vulkan_provider,
-                fuchsia::sysmem::AllocatorSyncPtr& sysmem_allocator,
+                fuchsia::sysmem2::AllocatorSyncPtr& sysmem_allocator,
                 fuchsia::ui::composition::AllocatorPtr& flatland_allocator,
                 sk_sp<GrDirectContext> context,
                 const SkISize& size);
@@ -135,7 +135,7 @@ class VulkanSurface final : public SurfaceProducerSurface {
                      const zx_packet_signal_t* signal);
 
   bool AllocateDeviceMemory(
-      fuchsia::sysmem::AllocatorSyncPtr& sysmem_allocator,
+      fuchsia::sysmem2::AllocatorSyncPtr& sysmem_allocator,
       fuchsia::ui::composition::AllocatorPtr& flatland_allocator,
       sk_sp<GrDirectContext> context,
       const SkISize& size);
